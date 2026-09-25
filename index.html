@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediShield | Smart Medication Safety</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN APP
+    ====================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    +
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        MediShield
+                    </strong>
+
+                    <span>
+                        Medication Safety
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav>
+
+                <button
+                    class="nav active"
+                    data-target="dashboard"
+                    type="button">
+
+                    <span>◈</span>
+
+                    Dashboard
+
+                </button>
+
+
+                <button
+                    class="nav"
+                    data-target="checker"
+                    type="button">
+
+                    <span>✓</span>
+
+                    Prescription Checker
+
+                </button>
+
+
+                <button
+                    class="nav"
+                    data-target="medications"
+                    type="button">
+
+                    <span>▣</span>
+
+                    Medication Library
+
+                </button>
+
+
+                <button
+                    class="nav"
+                    data-target="patients"
+                    type="button">
+
+                    <span>♙</span>
+
+                    Patients
+
+                </button>
+
+            </nav>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="sidebar-note">
+
+                <span class="pulse"></span>
+
+                Safety engine online
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <div class="eyebrow">
+                        CLINICAL SAFETY WORKSPACE
+                    </div>
+
+                    <h1 id="pageTitle">
+                        Medication Safety Dashboard
+                    </h1>
+
+                </div>
+
+
+                <div class="status">
+
+                    <span></span>
+
+                    System operational
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                id="dashboard"
+                class="page active-page">
+
+
+                <!-- HERO -->
+
+                <div class="hero">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SMART ERROR PREVENTION
+                        </p>
+
+
+                        <h2>
+                            Catch medication risks
+                            <em>before</em>
+                            they reach the patient.
+                        </h2>
+
+
+                        <p>
+                            Review prescriptions for demo interaction,
+                            allergy and dose-threshold alerts in one place.
+                        </p>
+
+
+                        <button
+                            class="primary"
+                            type="button"
+                            onclick="showPage('checker')">
+
+                            Start safety check →
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-orb">
+
+                        <div>
+                            +
+                        </div>
+
+                        <small>
+                            SAFETY<br>
+                            ENGINE
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATISTICS -->
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <span>
+                            Patients
+                        </span>
+
+                        <strong id="sPatients">
+                            0
+                        </strong>
+
+                        <b>
+                            registered
+                        </b>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            Medication checks
+                        </span>
+
+                        <strong id="sRx">
+                            0
+                        </strong>
+
+                        <b>
+                            reviewed
+                        </b>
+
+                    </div>
+
+
+                    <div class="stat danger">
+
+                        <span>
+                            High alerts
+                        </span>
+
+                        <strong id="sHigh">
+                            0
+                        </strong>
+
+                        <b>
+                            needs attention
+                        </b>
+
+                    </div>
+
+
+                    <div class="stat warn">
+
+                        <span>
+                            Medium alerts
+                        </span>
+
+                        <strong id="sMedium">
+                            0
+                        </strong>
+
+                        <b>
+                            review recommended
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RECENT ALERTS -->
+
+                <div class="panel">
+
+                    <div class="panel-head">
+
+                        <div>
+
+                            <h3>
+                                Recent safety alerts
+                            </h3>
+
+                            <p>
+                                Latest findings from the local demo safety engine
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="recentAlerts"
+                        class="alert-list">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PRESCRIPTION CHECKER
+            ================================================== -->
+
+            <section
+                id="checker"
+                class="page">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PRESCRIPTION REVIEW
+                        </p>
+
+                        <h2>
+                            Prescription Safety Checker
+                        </h2>
+
+                        <p>
+                            Enter a demo prescription and run
+                            automated rule checks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="checker-grid">
+
+
+                    <!-- PATIENT FORM -->
+
+                    <form
+                        id="checkForm"
+                        class="panel form-card">
+
+
+                        <h3>
+                            Patient details
+                        </h3>
+
+
+                        <div class="grid2">
+
+                            <label>
+
+                                Patient name
+
+                                <input
+                                    id="patientName"
+                                    required
+                                    placeholder="e.g. Rahul Sharma">
+
+                            </label>
+
+
+                            <label>
+
+                                Age
+
+                                <input
+                                    id="patientAge"
+                                    type="number"
+                                    min="0"
+                                    max="120"
+                                    placeholder="35">
+
+                            </label>
+
+                        </div>
+
+
+                        <label>
+
+                            Known allergies
+
+                            <input
+                                id="allergies"
+                                placeholder="e.g. Penicillin, Ibuprofen">
+
+                        </label>
+
+
+                        <h3>
+                            Medications
+                        </h3>
+
+
+                        <div id="medRows">
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary"
+                            id="addMed">
+
+                            + Add medication
+
+                        </button>
+
+
+                        <button
+                            class="primary full"
+                            type="submit">
+
+                            Run safety check
+
+                        </button>
+
+                    </form>
+
+
+
+                    <!-- RESULT -->
+
+                    <div class="panel result-card">
+
+
+                        <div class="result-head">
+
+                            <span class="shield">
+                                ✓
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    Safety result
+                                </h3>
+
+                                <p id="resultSub">
+                                    No check run yet
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="resultBox"
+                            class="empty-result">
+
+                            Enter prescription details and click
+
+                            <b>
+                                Run safety check
+                            </b>.
+
+                        </div>
+
+
+                        <div class="disclaimer">
+
+                            Demo/academic system only.
+                            Alerts are rule-based examples and must not
+                            replace a licensed clinician, pharmacist,
+                            official labeling, or drug-interaction database.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MEDICATION LIBRARY
+            ================================================== -->
+
+            <section
+                id="medications"
+                class="page">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            REFERENCE
+                        </p>
+
+                        <h2>
+                            Medication Library
+                        </h2>
+
+                        <p>
+                            Demo catalog used by the safety engine.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="drugGrid"
+                    class="drug-grid">
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PATIENTS
+            ================================================== -->
+
+            <section
+                id="patients"
+                class="page">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RECORDS
+                        </p>
+
+                        <h2>
+                            Patient Checks
+                        </h2>
+
+                        <p>
+                            Saved locally by the project backend.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="clearPatients"
+                        class="danger-btn"
+                        type="button">
+
+                        🗑 Clear All Records
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="panel table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Patient
+                                </th>
+
+                                <th>
+                                    Age
+                                </th>
+
+                                <th>
+                                    Medications
+                                </th>
+
+                                <th>
+                                    Alerts
+                                </th>
+
+                                <th>
+                                    Time
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="patientTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
